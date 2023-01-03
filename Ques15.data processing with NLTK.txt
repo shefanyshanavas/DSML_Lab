@@ -1,0 +1,59 @@
+!pip install -q wordcloud
+ import wordcloud 
+import nltk
+nltk.download('stopwords')
+ nltk.download('averaged_perceptron_tagger') 
+import pandas as pd
+import unicodedata 
+import numpy as np
+ import string
+  
+
+1.from collections import Counter 
+import nltk
+text = "Guru99 is one of the best sites to learn WEB, SAP, Ethical Hacking and much more online." 
+lower_case = text.lower()
+tokens = nltk.word_tokenize(lower_case)
+ tags = nltk.pos_tag(tokens)
+counts = Counter( tag for word, tag in tags) 
+print(counts)
+
+
+2.	import nltk
+text = "Guru99 is a totally new kind of learning experience." 
+Tokens = nltk.word_tokenize(text)
+output = list(nltk.bigrams(Tokens)) 
+print(output)
+
+
+
+3.	import nltk
+text = "Guru99 is a totally new kind of learning experience." 
+Tokens = nltk.word_tokenize(text)
+output = list(nltk.trigrams(Tokens)) 
+print(output)
+
+
+4.	from nltk.corpus import stopwords
+ print(stopwords.words('english'))
+ en_stopwords = stopwords.words('english')
+ def remove_stopwords(text):
+result = []
+for token in text:
+if token not in en_stopwords: result.append(token)
+return result
+text = "this is the only solution of that question".split() remove_stopwords(text)
+
+
+
+5.	from nltk.stem import PorterStemmer
+ from nltk.tokenize import word_tokenize
+ ps = PorterStemmer()
+sentence = "Programmers program with programming languages"
+ words = word_tokenize(sentence)
+for w in words:
+     print(w, " : ", ps.stem(w))
+
+
+
+
